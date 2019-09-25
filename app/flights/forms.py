@@ -1,21 +1,20 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, TextField, SelectField, widgets
-from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from wtforms import StringField, SubmitField, DateField
+from wtforms.validators import (DataRequired, Length, Email, EqualTo,
+                                ValidationError)
 from app.models import User
 from flask_login import current_user
+from flask_datepicker import datepicker
+
+
+class FlightForm(FlaskForm):
+    origin = StringField("Origin", validators=[DataRequired()])
+    destination = StringField("Destination", validators=[DataRequired()])
+    depart_date = DateField('Departure Date', validators=[DataRequired()])
+    return_date = DateField('Return Date', validators=[DataRequired()])
+    submit = SubmitField('Buy Now', validators=[DataRequired()])
 
 
 
-class PostForm(FlaskForm):
-    title = StringField('Title', validators=[DataRequired(), Length(min=10)])
-    content = TextAreaField('Content', validators=[DataRequired()])
-    image = FileField('Featured Image', validators=[FileAllowed(['jpg', 'png', 'jpeg'])])
-    category = StringField('Category', validators=[DataRequired()])
-    submit = SubmitField('Publish')
-    
-    
-class CommentForm(FlaskForm):
-    name = StringField('Name', validators=[DataRequired()])
-    comment = TextAreaField('Comment', validators=[DataRequired(), Length(min=10)])
-    submit = SubmitField('Submit')
+
