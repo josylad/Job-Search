@@ -45,3 +45,4 @@ class Hotel:
         self.label = label
         self.locationName = locationName
         self.fullName = fullName
+        
