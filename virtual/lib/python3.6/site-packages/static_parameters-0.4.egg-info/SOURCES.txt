@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+static_parameters/__init__.py
+static_parameters.egg-info/PKG-INFO
+static_parameters.egg-info/SOURCES.txt
+static_parameters.egg-info/dependency_links.txt
+static_parameters.egg-info/not-zip-safe
+static_parameters.egg-info/top_level.txt
