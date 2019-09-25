@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block content%} 
+
+    <article class="media content-section mt-2 pt-2">
+      <img class="rounded-circle article-img" src="https://source.unsplash.com/125x125/?profile,photo" alt="{{ post.author.username }} profile photo">
+            <div class="media-body">
+              <div class="article-metadata">
+                <a class="mr-2" href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ post.author.fullname }}</a>
+                <small class="text-muted mr-2">{{ post.posted_date.strftime('%Y-%m-%d') }}</small>
+                <small>Posted in: <a class="mr-2" href="{{ url_for('posts.category_post', category=post.category) }}">{{ post.category }}</a></small>
+
+                {% if post.author == current_user%}
+                <div>
+                    <a class="btn btn-default btn-sm mt-2 mb-2" href="{{ url_for('posts.update_post', post_id=post.id) }}">Edit</a>
+                    <button type="button" class="btn btn-danger btn-sm m-1 mb-1"  data-toggle="modal" data-target="#deleteModal">Delete</button>
+                </div>
+
+                {% endif %}
+              </div>
+              <h2 class="article-title mt-2 pb-2 pt-2 font-weight-bold">{{ post.title }}</h2>
+
+              {% if post.image %}
+                <img class="img-fluid" src="https://source.unsplash.com/random/600x400" alt="{{post.title}} image">
+                {% else %}
+                <img class="img-fluid" src="https://source.unsplash.com/random/600x400" alt="{{post.title}} image">
+              {% endif %}
+
+              <p class="article-content pt-2 mt-2">{{ post.content }}
+
+                            <!-- Section: Share buttons -->
+            <section class="text-center mb-4 smooth-scroll social-buttons">
+
+                <hr>
+  
+                <p class="font-weight-bold">Spreed the word: </p>
+  
+                <!--Facebook-->
+                <button type="button" class="btn btn-sm btn-info my-0">
+                  <i class="fab fa-facebook-f"></i>
+                </button>
+  
+                <!--Twitter-->
+                <button type="button" class="btn btn-sm btn-info my-0">
+                  <i class="fab fa-twitter"></i>
+                </button>
+  
+                <!--Twitter-->
+                <button type="button" class="btn btn-sm btn-info my-0">
+                  <i class="fab fa-linkedin-in"></i>
+                </button>
+  
+                <!-- Comments -->
+                <a role="button" class="btn btn-sm btn-unique my-0 mt-xs-4" href="#comments">
+                  <i class="far fa-comments mr-1"></i> Add comment
+                </a>
+  
+                <hr>
+  
+              </section>
+              <!-- Section: Share buttons -->
+              </p>
+            </div>
+            </article>
+
+            <!--Section: Author Box-->
+            <section class="mb-4 content-section">
+
+                <div class="text-center font-weight-bold">About the author</div>
+  
+                <div class="media mt-4 px-1">
+                  <img class="card-img-100 rounded d-flex z-depth-1 mr-3"
+                    src="https://source.unsplash.com/125x125/?profile,photo" alt="Generic placeholder image">
+                  <div class="media-body">
+  
+                    <div class="d-block">
+                      <p class="font-weight-bold my-0">
+                        <a href="" class="black-text">{{ post.author.fullname }}</a>
+                      </p>
+                      <div class="my-2">
+                        <a class="mr-1" role="button" href="{{ post.author.facebook}}" target="_blank"><i class="fab  fa-facebook-f"></i></a>
+                        <a class="mr-1" role="button" href="{{ post.author.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a class="mr-1" role="button" href="{{ post.author.github }}" target="_blank"><i class="fab fa-github"></i></a>
+                        <a class="mr-1" role="button" href="{{ post.author.linkedin }}" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                      </div>
+                    </div>
+  
+                    <p>{{post.author.bio}}</p>
+                  </div>
+                </div>
+  
+              </section>
+              <!--Section: Author Box-->
+
+    <div class="content-section">
+        <a class="ratings font-weight-bold" href="{{ url_for('posts.new_comment', post_id=post.id) }}"> Write a comment</a>
+
+        <div class="mt-4 mb-4" id="comments">
+
+                <h2>Comments</h2>
+                <hr>
+                {% if comments %}
+                {% for comment in comments %}
+
+                <ul>
+                    <p>Posted by: {{comment.author.username}}</p>
+                    <h4> {{ comment.comment }} </h4>
+                </ul>
+                {%if current_user.is_authenticated and current_user.id == post.user_id %}
+                <a href="{{url_for('posts.deleteComment', comment_id=comment.id, post_id=post.id)}}"><button class="btn btn-danger btn-sm m-1 mb-1">Delete</button></a>
+                {%endif%}
+            {% endfor %} 
+            {% else %}
+                <p>No comments</p>
+            {% endif %}
+            </div>
+    </div>
+   <!-- Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteModalLabel">Delete Post?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <form action="{{ url_for('posts.delete_post', post_id=post.id) }}" method="POST">
+                <input class="btn btn-danger" type="submit" value="Delete">
+              </form>
+            </div>
+          </div>
+        </div>
+        </div>
+
+{% endblock content %}
+       
