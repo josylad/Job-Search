@@ -1,4 +1,4 @@
-# TRAVEL BOOKER
+# JOB SEEKER
 
 ### **This project was done using Python 3.6  and Flask.** 
 
@@ -29,7 +29,7 @@ This is a travel booking application where users can book cheap flights and hote
 # **SETUP/INSTALLATION.**
 ## Prerequisites
 
-To work with TRAVEL BOOKER App you need to have some few prerequisites.
+To work with JOB SEEKER App you need to have some few prerequisites.
 
 - Python3.6
 
@@ -44,17 +44,17 @@ To work with TRAVEL BOOKER App you need to have some few prerequisites.
 - Terminal
 
 
-### **To work With TRAVEL BOOKER**
+### **To work With JOB SEEKER**
 
 1. You will need Internet connection.
 
 2. You will also need python installed and knowledge of python
 
-3. To get to use **TRAVEL BOOKER** first you need to get to the TRAVEL BOOKER repository. 
+3. To get to use **JOB SEEKER** first you need to get to the JOB SEEKER repository. 
 
 Link:-> ```ithub.com/josylad/Travel-Bookings```
 
-4. From there you can access TRAVEL BOOKER App.
+4. From there you can access JOB SEEKER App.
 
 5. **Clone** the project.
 
