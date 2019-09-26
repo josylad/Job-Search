@@ -7,9 +7,9 @@
         <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
         {% if title %}
-        <title> {{title}} - TRAVEL BOOKER  </title>
+        <title> {{title}} - JOB SEEKER  </title>
         {% else %}
-        <title>TRAVEL BOOKER</title>
+        <title>JOB SEEKER</title>
         {% endif%}
 
          <!-- Font Awesome -->
@@ -27,7 +27,6 @@
          <!-- MDB core JavaScript -->
          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/js/mdb.min.js"></script>
          
-         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 
         {{ simplemde.css }}
         {{ simplemde.js }}
@@ -40,11 +39,12 @@
     
             {% endblock %}
 
-                    {% block jumbo%}
-                    {% endblock %}
-        <main role="main" class="container mt-2 pt-2">
-            <div class="row">
-                <div class="col-md-9">
+            {% block jumbo%}
+            <div class="mt-4 pt-2"></div>
+
+            {% endblock %}
+        <main role="main" class=" mt-2 pt-2">
+            
                     {% with messages = get_flashed_messages(with_categories=true) %}
                     
                         {% if messages%}
@@ -62,63 +62,18 @@
                 {% block content %}
                 
                 {% endblock content %}
-                </div>
-                <div class="col-md-3 mt-2 pt-2">
-                <div class="content-section">
 
-                    <!-- Default form subscription -->
-<form class="text-center border border-light p-5" action="">
 
-        <p class="h4 mb-4">Subscribe</p>
-    
-        <p>Join our mailing list. We write rarely, but only the best content.</p>
-    
-        <!-- <p>
-            <a href="" target="_blank">See the last newsletter</a>
-        </p> -->
-    
-        <!-- Name -->
-        <input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4" placeholder="Name">
-    
-        <!-- Email -->
-        <input type="email" id="defaultSubscriptionFormEmail" class="form-control mb-4" placeholder="E-mail">
-    
-        <!-- Sign in button -->
-        <a href="/subscribe"> <button class="btn btn-info btn-block" >Sign Up</button></a>
-    
-    
-    </form>
-    <!-- Default form subscription -->
-
-                    <h3 class="mt-2 pt-2">Latest Posts</h3>
-
-                    <!-- {% for post in myposts %} -->
-                    <!-- <p> <a href="/post/{{post.category}}">{{post.category}}</a> </p> -->
-                    <!-- <p> <a href="/post/{{post.id}}">{{post.title}}</a> </p> -->
-                                    
-                     <!-- {% endfor %} -->
-                    <!-- <p class='text-muted'>Filter based on Categories. -->
-                    <!-- <ul class="list-group">
-                        <li class="list-group-item list-group-item-light"><a href="/post/Product%20Pitch">Product Pitch</a> </li>
-                        <li class="list-group-item list-group-item-light"><a href="/post/Interview%20Pitch">Interview Pitch</a> </li>
-                        <li class="list-group-item list-group-item-light"><a href="/post/Sales">Sales Pitch</a> </li>
-                        <li class="list-group-item list-group-item-light"><a href="/post/Business%20Pitch">Business Pitch</a> </li>
-                    </ul> -->
-                    </p>
-                </div>
                 
-            </div>
-            </div>
-            
         </main>
       <!-- Footer -->
-<footer class="page-footer font-small success-color-dark mt-4 pt-4">
+        <footer class="page-footer font-small success-color-dark mt-4 pt-4">
 
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2019 Copyright.
-          <a href="https://github.com/josylad"> TRAVEL BOOKER</a>
-        </div>
-        <!-- Copyright -->
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 Copyright.
+            <a href="#!"> JOB SEEKER</a>
+            </div>
+            <!-- Copyright -->
       
       </footer>
       <!-- Footer -->
