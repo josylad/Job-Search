@@ -6,86 +6,14 @@
 
 {% block content%} 
 
-  <!-- Section heading -->
-  <h2 class="h1-responsive font-weight-bold text-center my-2">Recent posts</h2>
-  <!-- Grid row -->
-    {% for post in posts.items %}
+{%for data in flights%}
+<p> ${{data.value}} </p>
+<p> {{data.distance}} </p>
+<p> {{data.origin}} </p>
 
-  <!-- Section: Blog v.3 -->
-<section class="my-5">
 
-  <div class="row">
-
-    <!-- Grid column -->
-    <div class="col-lg-5 col-xl-4">
-
-      <!-- Featured image -->
-      <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
-        {% if post.image %}
-        <img class="img-fluid" src="https://source.unsplash.com/random/600x400" alt="{{post.title}} image">
-        {% else %}
-        <img class="img-fluid" src="https://source.unsplash.com/random/600x400" alt="{{post.title}} image">
-        {% endif %}
-        <a>
-          <div class="mask rgba-white-slight"></div>
-        </a>
-      </div>
-
-    </div>
-    <!-- Grid column -->
-
-    <!-- Grid column -->
-    <div class="col-lg-7 col-xl-8">
-      <!-- <a href="{{ url_for('posts.category_post', category=post.category) }}" class="green-text">
-        <h6 class="font-weight-bold mb-3"> {{ post.category }}</h6>
-      </a> -->
-      <!-- Post title -->
-      <h3><a class="font-weight-bold mb-3 black-text" href="{{ url_for('posts.post', post_id=post.id) }}">{{ post.title }}</a></h3>
-      <!-- Excerpt -->
-      <p class="dark-grey-text">{{ post.content | truncate(400) }}</p>
-      <!-- Post data -->
-      <p>by <a class="font-weight-bold green-text" href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ post.author.fullname }}</a>, {{ post.posted_date.strftime('%Y - %m - %d') }} 
-        <span class="ml-4"></span> Category: <a href="{{ url_for('posts.category_post', category=post.category) }}" class="green-text">
-         <span class="font-weight-bold mb-3"> {{ post.category }}</span>
-      </p>
-      <!-- Read more button -->
-      <a class="btn success-color-dark text-white btn-md" href="{{ url_for('posts.post', post_id=post.id) }}">Read more</a>
-
-    </div>
-    <!-- Grid column -->
-
-  </div>
-  <!-- Grid row -->
-
-  <hr class="my-5">
-
+{% endfor %}  
   
-
-</section>
-<!-- Section: Blog v.3 -->
-
-    {% endfor %}
-    {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
-      {% if page_num %}
-        {% if posts.page == page_num %}
-      <a class="btn btn-sm btn-success mb-2 mt-2" href="{{ url_for('main.home', page=page_num) }}"> {{page_num}} </a>
-        {% else %}
-        <a class="btn btn-sm btn-outline-success mb-2 mt-2" href="{{ url_for('main.home', page=page_num) }}"> {{page_num}} </a>
-        {% endif %}
-
-      {% else %}
-        ...
-      {% endif %}
-
-    {% endfor %}
-
-
-    <div class="quotes">
-
-      <!-- <p> {{quotes.quote}}</p>
-      <p> {{quotes.author}}</p>                 -->
-
-  </div>
 
 {% endblock content %}
        
