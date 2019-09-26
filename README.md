@@ -5,23 +5,15 @@
 
 # DESCRIPTION
 
-This is a travel booking application where users can book cheap flights and hotels. 
+This is a Job Search application where users can for Jobs and find the links to apply foe the jobs. 
 
 ## User Story
 
-- Users can search for flights.
+- Users can find Jobs
 
-- Users can see cheapest flights.
+- Users can see Details about the Job.
 
-- Users can book flights
-
--  Users can search hotels
-
-- Users can book hotels
-
-- Users can sign up on the website
-
-- Users can login to the website
+- Users can follow a link to the Job application page
 
 
 
@@ -52,7 +44,7 @@ To work with JOB SEEKER App you need to have some few prerequisites.
 
 3. To get to use **JOB SEEKER** first you need to get to the JOB SEEKER repository. 
 
-Link:-> ```ithub.com/josylad/Travel-Bookings```
+Link:-> ```http://github.com/josylad/Job-Search```
 
 4. From there you can access JOB SEEKER App.
 
