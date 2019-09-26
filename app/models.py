@@ -26,14 +26,29 @@ class Flight:
     Flight class to define Flight Objects
     '''
 
-    def __init__(self, price, airline, flight_number, departure_at, return_at, 
-                 expires_at):
+    def __init__(self,value,return_date,origin,duration,distance,destination,depart_date):
+        self.value = value
+        self.return_date = return_date
+        self.origin = origin
+        self.duration = duration
+        self.distance = distance
+        self.destination = destination
+        self.depart_date = depart_date
+
+
+
+class Flightgroup:
+    '''
+    Flight class to define Flight Objects
+    '''
+
+    def __init__(self,origin,destination,price, airline,flight_number):
+        self.origin = origin
+        self.destination = destination
         self.price = price
         self.airline = airline
         self.flight_number = flight_number
-        self.departure_at = departure_at
-        self.return_at = return_at
-        self.expires_at = expires_at
+        
 
 
 class Hotel:
