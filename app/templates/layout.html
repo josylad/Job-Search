@@ -7,9 +7,9 @@
         <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
         {% if title %}
-        <title> {{title}} - FLASK BLOG  </title>
+        <title> {{title}} - TRAVEL BOOKER  </title>
         {% else %}
-        <title>FLASK BLOG</title>
+        <title>TRAVEL BOOKER</title>
         {% endif%}
 
          <!-- Font Awesome -->
@@ -92,11 +92,11 @@
 
                     <h3 class="mt-2 pt-2">Latest Posts</h3>
 
-                    {% for post in myposts %}
+                    <!-- {% for post in myposts %} -->
                     <!-- <p> <a href="/post/{{post.category}}">{{post.category}}</a> </p> -->
-                    <p> <a href="/post/{{post.id}}">{{post.title}}</a> </p>
+                    <!-- <p> <a href="/post/{{post.id}}">{{post.title}}</a> </p> -->
                                     
-                     {% endfor %}
+                     <!-- {% endfor %} -->
                     <!-- <p class='text-muted'>Filter based on Categories. -->
                     <!-- <ul class="list-group">
                         <li class="list-group-item list-group-item-light"><a href="/post/Product%20Pitch">Product Pitch</a> </li>
@@ -106,14 +106,7 @@
                     </ul> -->
                     </p>
                 </div>
-                <div class="quotes">
-
-                    <h3>Random Quote</h3>
-                        <p> {{quotes.quote}}</p>
-                        <p> {{quotes.author}}</p>                
-        
-                    </div>
-
+                
             </div>
             </div>
             
@@ -123,7 +116,7 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2019 Copyright.
-          <a href="https://github.com/josylad"> Joseph Adediji</a>
+          <a href="https://github.com/josylad"> TRAVEL BOOKER</a>
         </div>
         <!-- Copyright -->
       
