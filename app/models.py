@@ -26,30 +26,32 @@ class Flight:
     Flight class to define Flight Objects
     '''
 
-    def __init__(self,value,return_date,origin,duration,distance,destination,depart_date):
+    def __init__(self,value,return_date,origin,distance,destination,depart_date):
         self.value = value
         self.return_date = return_date
         self.origin = origin
-        self.duration = duration
         self.distance = distance
         self.destination = destination
         self.depart_date = depart_date
 
 
 
-class Flightgroup:
+class Jobsearch:
     '''
     Flight class to define Flight Objects
     '''
 
-    def __init__(self,origin,destination,price, airline,flight_number):
-        self.origin = origin
-        self.destination = destination
-        self.price = price
-        self.airline = airline
-        self.flight_number = flight_number
+    def __init__(self,url,types,created_at,company_url, company, location,title, description, company_logo):
+        self.url = url
+        self.types = types
+        self.created_at = created_at
+        self.company_url = company_url
+        self.company = company
+        self.location = location
+        self.title = title
+        self.description = description
+        self.company_logo=company_logo
         
-
 
 class Hotel:
     '''

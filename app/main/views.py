@@ -1,6 +1,6 @@
 from flask import render_template, request, Blueprint
-from app.models import Flight, Hotel
-from app.request import get_flights, get_flightgroup
+from app.models import Flight, Hotel, Jobsearch
+from app.request import get_flights, get_flights, get_jobs
 
 main = Blueprint('main', __name__)
 
@@ -10,18 +10,19 @@ main = Blueprint('main', __name__)
 @main.route("/")
 @main.route("/home")
 def home():
-    flights = get_flights()
-    if flights is None:
-        abort(404)
+    # flights = get_flights()
+    # if flights is None:
+    #     abort(404)
+        
+    jobs = get_jobs()
     page = request.args.get('page', 1, type=int)
-    # categories = Post.query.filter_by(category=post.category).all()
-    # print (flights[0])
-    print(flights)
-    return render_template('index.html',flights=flights)
+    
+    return render_template('index.html',jobs=jobs)
 
 @main.route("/about")
 def about():
-    return render_template('about.html')
+    jobs = get_jobs()
+    return render_template('about.html', jobs=jobs)
 
 
 @main.route("/subscribe")
