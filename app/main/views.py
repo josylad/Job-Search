@@ -1,6 +1,8 @@
 from flask import render_template, request, Blueprint
-from app.models import Flight, Hotel, Jobsearch
-from app.request import get_flights, get_flights, get_jobs
+from app.models import Jobsearch
+from app.request import get_jobs
+from flask_login import login_user, logout_user, login_required
+from app.jobs.forms import JobSearchForm
 
 main = Blueprint('main', __name__)
 
@@ -10,14 +12,18 @@ main = Blueprint('main', __name__)
 @main.route("/")
 @main.route("/home")
 def home():
-    # flights = get_flights()
-    # if flights is None:
-    #     abort(404)
-        
-    jobs = get_jobs()
+   
+    form = JobSearchForm()
+    
+    city = request.args.get('city')
+    keyword = request.args.get('keyword')
+    
+    jobs = get_jobs(keyword, city)
     page = request.args.get('page', 1, type=int)
     
-    return render_template('index.html',jobs=jobs)
+    
+    return render_template('index.html',jobs=jobs, form=form)
+
 
 @main.route("/about")
 def about():
@@ -25,7 +31,17 @@ def about():
     return render_template('about.html', jobs=jobs)
 
 
-@main.route("/subscribe")
-def subscribe():
-    return render_template('subscribe.html')
-
+@main.route("/search")
+@login_required
+def search():
+   
+    form = JobSearchForm()
+    
+    city = request.args.get('city')
+    keyword = request.args.get('keyword')
+    
+    jobs = get_jobs(keyword, city)
+    page = request.args.get('page', 1, type=int)
+    
+    
+    return render_template('search.html', jobs=jobs, form=form)
