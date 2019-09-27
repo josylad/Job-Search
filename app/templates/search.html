@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block jumbo%}
+<div class="mt-4 pt-2"></div>
+{% endblock %}
+
+{% block content%}
+<div class=" pt-4 mt-5 pl-4 pr-4">
+
+</div>
+<!-- SEARCH FORM -->
+<div>
+    <div class="container pl-2 pr-2">
+        <form>
+            <!-- {{ form.hidden_tag() }} -->
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Search For Jobs</legend>
+
+                <div class="row">
+                        <div class="col-md-5">
+                                <div class="form-group">
+                                    {{ form.keyword.label(class="form-control-label font-weight-bold") }}
+                                    {% if form.keyword.errors %}
+                                    {{ form.keyword(class="form-control form-control-md is-invalid", placeholder="Enter a keyword") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.keyword.errors %}
+                                        <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    {% else %}
+                                    {{ form.keyword(class="form-control form-control-md", placeholder="Enter a keyword") }}
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            {{ form.city.label(class="form-control-label font-weight-bold") }}
+                            {% if form.city.errors %}
+                            {{ form.city(class="form-control form-control-md is-invalid", placeholder="Enter a city") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.city.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.city(class="form-control form-control-md", placeholder="Enter a city") }}
+                            {% endif %}
+                        </div>
+                    </div>
+                   
+                    <div class="col-md-2 pt-4">
+                        <div class="form-group">
+                            {{ form.submit(class="btn btn-md btn-outline-info") }}
+                        </div>
+                    </div>
+                </div>
+               
+            </fieldset>
+
+        </form>
+    </div>
+
+</div>
+
+<!-- SEARCH FORM -->
+
+
+<div class="container">
+    <div class="row">
+        {% for job in jobs %}
+
+        <div class="col-sm-4 py-2">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="view overlay mb-4">
+                        {% if job.company_logo %}
+                        <img class="card-img-top" src="{{job.company_logo}}" alt="Card image cap">
+                        {% else %}
+                        <img class="card-img-top" src="https://source.unsplash.com/m_HRfLhgABo/600x400"
+                            alt="Card image cap">
+                        {% endif %}
+                        <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <h3 class="card-title"><span class="font-weight-bold">Job Title: </span></h3>
+                    <h3 class="card-title"> {{job.title}}</h3>
+                    <!-- Text -->
+                    <p class="card-text"> <span class="font-weight-bold">Create At: </span> {{job.created_at}}</p>
+                    <p class="card-text"> <span class="font-weight-bold">Company Name: </span> {{job.company}}</p>
+                    <!-- <p class="card-text"> <span class="font-weight-bold">Company URL: </span> {{job.company_url}}</p> -->
+                    <p class="card-text"> <span class="font-weight-bold">Job Location: </span> {{job.location}}</p>
+                    <p class="card-text"> <span class="font-weight-bold">Job Type: </span> {{job.types}}</p>
+
+                    <a href="{{job.url}}" class="btn btn-primary" target="_blank">Apply Now</a>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

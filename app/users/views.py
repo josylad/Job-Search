@@ -3,7 +3,7 @@ from .. import mail
 from flask import render_template, url_for, flash, redirect, request, Blueprint, url_for, current_app
 from flask_login import login_user, current_user, logout_user, login_required
 from app import db, bcrypt
-from app.models import User, Flight, Hotel
+from app.models import User
 from app.users.forms import (RegistrationForm, LoginForm, UpdateAccountForm)
 import secrets
 from PIL import Image
@@ -32,7 +32,7 @@ def register():
         mail_message("Welcome to JOB SEEKER","email/welcome_user",user.email,user=user)
 
         return redirect(url_for('users.login'))
-    return render_template('register.html', title='Register', form=form, quotes=quotes)
+    return render_template('register.html', title='Register', form=form)
 
 
 @users.route("/login", methods=['GET', 'POST'])
@@ -45,10 +45,10 @@ def login():
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
             next_page = request.args.get('next')
-            return redirect(next_page) if next_page else redirect(url_for('main.home'))
+            return redirect(next_page) if next_page else redirect(url_for('main.search'))
         else:
             flash('Login Unsuccessful. Please check email and password', 'danger')
-    return render_template('login.html', title='Login', form=form, quotes=quotes)
+    return render_template('login.html', title='Login', form=form)
 
 
 @users.route("/logout")
@@ -119,4 +119,4 @@ def user_posts(username):
     user = User.query.filter_by(username=username).first_or_404()
     posts = Post.query.filter_by(author=user).order_by(Post.posted_date.desc()).paginate(page=page, per_page=7)
     myposts = Post.query.order_by(Post.posted_date.desc())
-    return render_template('userposts.html', posts=posts, user=user, myposts=myposts, quotes=quotes)
+    return render_template('userposts.html', user=user)
