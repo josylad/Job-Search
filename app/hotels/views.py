@@ -7,7 +7,6 @@ import secrets
 from PIL import Image
 from app.request import get_quote
 from app.models import Post, User, Comment
-from app.posts.forms import PostForm, CommentForm
 from app.request import get_quote
 from flask_simplemde import SimpleMDE
 from ..main import views

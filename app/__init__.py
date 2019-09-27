@@ -40,11 +40,9 @@ def create_app(config_name):
     
     
     from app.users.views import users 
-    from app.posts.views import posts
     from app.main.views import main 
     
     app.register_blueprint(users)
-    app.register_blueprint(posts)
     app.register_blueprint(main)
 
     return app

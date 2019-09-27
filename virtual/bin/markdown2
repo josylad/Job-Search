@@ -1,4 +1,4 @@
-#!/home/josylad/Documents/moringa-core/Python/Flask/Travel-Bookings/virtual/bin/python3.6
+#!/home/riley/Flask/Travel-Bookings/virtual/bin/python3.6
 
 import sys
 from os.path import join, dirname, exists
