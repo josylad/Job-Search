@@ -44,7 +44,7 @@
 
             {% endblock %}
         <main role="main" class=" mt-2 pt-2">
-            
+                <div class="container pt-2 mt-2"> 
                     {% with messages = get_flashed_messages(with_categories=true) %}
                     
                         {% if messages%}
@@ -53,11 +53,13 @@
                             <div class="alert alert-{{category}}">
                                 {{message}}
                             </div>
+                        
                         {% endfor %}
 
                         {% endif %}
 
                     {% endwith %}
+                </div>
 
                 {% block content %}
                 
