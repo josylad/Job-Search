@@ -1,7 +1,7 @@
 import os
 import urllib.request
 import json
-from app.models import Flight, Hotel, Jobsearch
+from app.models import Jobsearch
 import requests
 from dotenv import load_dotenv
 
