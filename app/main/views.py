@@ -1,5 +1,5 @@
 from flask import render_template, request, Blueprint
-from app.models import Flight, Hotel, Jobsearch
+from app.models import Jobsearch
 from app.request import get_flights, get_flights, get_jobs
 
 main = Blueprint('main', __name__)
