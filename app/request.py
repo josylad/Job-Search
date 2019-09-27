@@ -8,66 +8,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-TOKEN = os.environ.get('TOKEN')
 
-
-def get_flights():
-    url = "https://api.travelpayouts.com/v2/prices/latest"
-
-    querystring = {"origin":"CDG","destination":"JFK","depart_date":"2019-11", "return_date":"2019-12", "currency":"USD"}
-
-    headers = {'x-access-token': TOKEN}
-
-    response = requests.request("GET", 'https://api.travelpayouts.com/v2/prices/latest?origin=JFK&destination=CDG&depart_date=2019-11&return_date=2019-12&currency=USD&token=9d69ff17b962950c4f4640be33ac9a77')
+def get_jobs(keyword, city):
     
-    flight_list = response.json()
-
-    # print(flight_list['data']['PAR']['0'])
-    flight_lists = flight_list
-    all_flights = []
-    for flight in flight_lists['data']:
-        value = flight.get('value')    
-        return_date = flight.get('return_date')
-        origin = flight.get('origin')
-        distance = flight.get('distance')
-        destination = flight.get('destination')
-        depart_date = flight.get('depart_date')
-        
-        new_flight = Flight(value, return_date, origin, distance, destination,depart_date)
-        # print(new_flight.distance)
-        all_flights.append(new_flight)
-        
-    
-    return all_flights
-
-
-# def get_cheapflights():
-#     url = "https://api.travelpayouts.com/v1/prices/cheap"
-    
-#     querystring = {"origin":"CDG","destination":"JFK","depart_date":"2019-11", "return_date":"2019-12", "currency":"USD"}
-
-#     headers = {'x-access-token': TOKEN}
-    
-#     response = requests.request("GET", 'https://api.travelpayouts.com/v1/prices/cheap?origin=JFK&destination=CDG&depart_date=2019-11&return_date=2019-12&currency=USD&token=9d69ff17b962950c4f4640be33ac9a77')
-    
-#     tickets = []
-    
-#     data_par = data['data']['PAR']
-    
-#     for ticket in data_par.values(): # loop through the dictionaries values
-#             tickets.append({
-#             'price': ticket['price']
-
-#         })
-            
-#     print(tickets)
-        
-#     return tickets
-
-
-def get_jobs():
-    
-    response = requests.request("GET", 'https://jobs.github.com/positions.json?description=javascript&full_time=true&location=sf')
+    response = requests.request("GET", f'https://jobs.github.com/positions.json?description={keyword}&location={city}')
     
     job_list = response.json()
     job_lists = job_list
@@ -89,7 +33,7 @@ def get_jobs():
         
         new_jobs = Jobsearch(url, types, created_at, company_url, company, location,title, description,company_logo)
         
-        print(new_jobs.company)
+        # print(new_jobs.company)
         
         all_jobs.append(new_jobs)
 
