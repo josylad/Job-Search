@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content%} 
-<div class="content-section pt-2 mt-4 mb-4 pb-4">
+<div class="container pt-2 mt-4 mb-4 pb-4">
     <div class="row">
     <div class="col-md-6">
         <div class="media">
@@ -46,21 +46,7 @@
                     {% endif %}
                 </div>
 
-                <div class="form-group">
-                        {{ form.bio.label(class="form-control-label") }}
-    
-                        {% if form.bio.errors %}
-                        {{ form.bio(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.bio.errors %}
-                            <span> {{ error }}</span>
-                            {% endfor %}
-                        </div>
-                        {% else %}
-                            {{ form.bio(class="form-control form-control-lg") }}
-                        {% endif %}
-                    </div>
-
+                
                   <div class="form-group">
                       {{ form.email.label(class="form-control-label") }}
                       {% if form.email.errors %}
@@ -74,7 +60,7 @@
                           {{ form.email(class="form-control form-control-lg") }}
                       {% endif %}
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                       {{ form.picture.label() }}
                       {{ form.picture(class="form-control-file") }}
                       {% if form.picture.errors %}
@@ -82,92 +68,15 @@
                               <span class="text-danger">{{ error }}</span></br>
                           {% endfor %}
                       {% endif %}
-                  </div>
-
-                <div class="mt-2 pt-2"><h3>Social Media Profiles</h3>
-                    <div class="form-group">
-                        {{ form.facebook.label(class="form-control-label") }}
-    
-                        {% if form.facebook.errors %}
-                        {{ form.facebook(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.facebook.errors %}
-                            <span> {{ error }}</span>
-                            {% endfor %}
-                        </div>
-                        {% else %}
-                            {{ form.facebook(class="form-control form-control-lg") }}
-                        {% endif %}
-                    </div>
-
-                    <div class="form-group">
-                        {{ form.twitter.label(class="form-control-label") }}
-    
-                        {% if form.twitter.errors %}
-                        {{ form.twitter(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.twitter.errors %}
-                            <span> {{ error }}</span>
-                            {% endfor %}
-                        </div>
-                        {% else %}
-                            {{ form.twitter(class="form-control form-control-lg") }}
-                        {% endif %}
-                    </div>
-
-                    <div class="form-group">
-                        {{ form.github.label(class="form-control-label") }}
-    
-                        {% if form.github.errors %}
-                        {{ form.github(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.github.errors %}
-                            <span> {{ error }}</span>
-                            {% endfor %}
-                        </div>
-                        {% else %}
-                            {{ form.github(class="form-control form-control-lg") }}
-                        {% endif %}
-                    </div>
-
-                    <div class="form-group">
-                        {{ form.linkedin.label(class="form-control-label") }}
-    
-                        {% if form.linkedin.errors %}
-                        {{ form.linkedin(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.linkedin.errors %}
-                            <span> {{ error }}</span>
-                            {% endfor %}
-                        </div>
-                        {% else %}
-                            {{ form.linkedin(class="form-control form-control-lg") }}
-                        {% endif %}
-                    </div>
-                </div>
-
+                  </div> -->
+                
               </fieldset>
               <div class="form-group">
                   {{ form.submit(class="btn btn-outline-success") }}
               </div>
           </form>
         </div>
-        <div class="col-md-3 pt-4 mt-4 ml-4">
-            <h3 class="text-center">My Posts</h3>
-            
-            {% if posts %}
-                {% for post in posts %}
-                    <ul>
-                        <li><p><a class="" href="{{ url_for('posts.post', post_id=post.id) }}">{{ post.title }}</a></p>
-                        </li>
-                    </ul>
-                    {% endfor %}
-                    {% else %}
-                    <p>You have not published any post</p>
-                   
-                {% endif %}
-
-        </div> 
+        
     </div>
 </div>
 
