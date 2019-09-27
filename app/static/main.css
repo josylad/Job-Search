@@ -3,6 +3,11 @@ html, body {
   min-height: 100%;
 }
 
+.intro{
+  background-image: url('https://recruitinguploadbucket.s3.amazonaws.com/journal_images/e86c597f-main.jpeg?versionId=aMEU_S6jCILXBnUXu22Xw26_JjB48zPP')
+  
+}
+
 body {
     color: #333333;
     margin-top: 5rem;
