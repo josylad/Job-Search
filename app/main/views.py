@@ -44,4 +44,4 @@ def search():
     page = request.args.get('page', 1, type=int)
     
     
-    return render_template('post.html',jobs=jobs, form=form)
+    return render_template('search.html', jobs=jobs, form=form)
