@@ -5,16 +5,18 @@
 
 # DESCRIPTION
 
-This is a Job Search application where users can for Jobs and find the links to apply foe the jobs. 
+This is a Job Search application where users can for Jobs and find the links to apply for the jobs. 
 
 ## User Story
+
+
+- Users can sign up and login to find Jobs.
 
 - Users can find Jobs
 
 - Users can see Details about the Job.
 
 - Users can follow a link to the Job application page
-
 
 
 
