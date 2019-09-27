@@ -7,4 +7,4 @@ from wtforms.validators import DataRequired
 class JobSearchForm(FlaskForm):
     city = TextField("City", validators=[DataRequired()])
     keyword = TextField('Keyword', validators=[DataRequired()])
-    search = SubmitField('Search')
+    submit = SubmitField('Search')
