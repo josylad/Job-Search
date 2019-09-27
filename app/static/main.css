@@ -1,7 +1,7 @@
 html, body {
   position: relative;
   min-height: 100%;
-}
+  }
 
 body {
     color: #333333;
@@ -91,7 +91,37 @@ body {
   a {
     cursor: pointer;
     color: rgb(3, 167, 68);
-}
- p {
+  }
+  p {
    font-size: 18px;
- }
+  }
+ .mt-4 pt-4 {
+  font-family: 'Big Shoulders Display', cursive;
+  }
+  #container-fluid {
+  font-family: 'Big Shoulders Display', cursive;
+  }usususus
+  p.card-text {
+  font-family: 'Big Shoulders Display', cursive;
+  }
+
+  #about {
+    font-family: 'Mansalva';
+    font-style: normal;
+    font-weight: 400;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .job {
+    text-align: center;
+    text-decoration: underline wavy ;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 50px auto;
+	  text-align: center;
+	  color: rgb(0, 0, 0);
+	  opacity: 0.4;
+    font: 700 80px 'Bitter';
+    text-shadow: 6px 6px 10px rgb(113, 187, 113);
+  }
