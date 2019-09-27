@@ -16,7 +16,19 @@
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
          <!-- Bootstrap core CSS -->
          <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+         <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+
+
+        
+        
          <!-- Material Design Bootstrap -->
+        
+        
+        
          <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css" rel="stylesheet">
          <!-- JQuery -->
          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -43,7 +55,7 @@
             <div class="mt-4 pt-2"></div>
 
             {% endblock %}
-        <main role="main" class=" mt-2 pt-2">
+        <main role="main" class=" mt-4 pt-4">
             
                     {% with messages = get_flashed_messages(with_categories=true) %}
                     

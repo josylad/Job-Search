@@ -24,12 +24,12 @@ def register():
     form = RegistrationForm()
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-        user = User(username=form.username.data, fullname=form.fullname.data, email=form.email.data, password=hashed_password)
+        user = User(username=form.username.data, fullname=form.fullname.data, email = form.email.data, password=hashed_password)
         db.session.add(user)
         db.session.commit()
                 
         flash('Your account has been created! You are now able to log in', 'success')
-        mail_message("Welcome to JOB SEEKER","email/welcome_user",user.email,user=user)
+        mail_message("Welcome to JOB SEEKER", "email/welcome_user", user.email, user=user)
 
         return redirect(url_for('users.login'))
     return render_template('register.html', title='Register', form=form, quotes=quotes)
@@ -119,4 +119,5 @@ def user_posts(username):
     user = User.query.filter_by(username=username).first_or_404()
     posts = Post.query.filter_by(author=user).order_by(Post.posted_date.desc()).paginate(page=page, per_page=7)
     myposts = Post.query.order_by(Post.posted_date.desc())
-    return render_template('userposts.html', posts=posts, user=user, myposts=myposts, quotes=quotes)
+    return render_template('userposts.html', posts=posts, user=user, myposts=myposts, 
+                            quotes=quotes)

@@ -1,45 +1,48 @@
 {% extends "layout.html" %}
 
 {% block jumbo%}
-<div class="mt-4 pt-2"></div>
+
+<div class="mt-4 pt-4"></div>
 {% endblock %}
 
-{% block content%} 
-<div class=" pt-4 mt-5 pl-4 pr-4">
-        
-    </div>
-    <div class="container">
-            <div class="row">
-                    {% for job in jobs %}
-                
-                <div class="col-sm-4 py-2">
-                    <div class="card h-100">
-                        <div class="card-body">
-                                <div class="view overlay mb-4">
-                                        {% if job.company_logo %}
-                                      <img class="card-img-top" src="{{job.company_logo}}" alt="Card image cap">
-                                      {% else %}
-                                      <img class="card-img-top" src="https://source.unsplash.com/m_HRfLhgABo/600x400" alt="Card image cap">
-                                    {% endif %}
-                                        <div class="mask rgba-white-slight"></div>
-                                      </a>
-                                    </div>
-                            <h3 class="card-title"><span class="font-weight-bold">Job Title: </span></h3>
-                            <h3 class="card-title"> {{job.title}}</h3>
-                            <!-- Text -->
-                                <p class="card-text"> <span class="font-weight-bold">Create At: </span> {{job.created_at}}</p>
-                                <p class="card-text"> <span class="font-weight-bold">Company Name: </span> {{job.company}}</p>
-                                <!-- <p class="card-text"> <span class="font-weight-bold">Company URL: </span> {{job.company_url}}</p> -->
-                                <p class="card-text"> <span class="font-weight-bold">Job Location: </span> {{job.location}}</p>
-                                <p class="card-text"> <span class="font-weight-bold">Job Type: </span> {{job.type}}</p>
+{% block content%}
+<h1 class="job"><strong> JOB SEEKER</strong></h1>
 
-                                <a href="{{job.url}}" class="btn btn-primary" target="_blank">Apply Now</a>
-                            </div>
+<div class=" pt-4 mt-4 pl-4 pr-4">
+
+</div>
+<div class="container">
+    <div class="row">
+        {% for job in jobs %}
+
+        <div class="col-sm-4 py-2">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="view overlay mb-4">
+                        {% if job.company_logo %}
+                        <img class="card-img-top" src="{{job.company_logo}}" alt="Card image cap">
+                        {% else %}
+                        <img class="card-img-top" src="https://source.unsplash.com/m_HRfLhgABo/600x400"
+                            alt="Card image cap">
+                        {% endif %}
+                        <div class="mask rgba-white-slight"></div>
+                        </a>
                     </div>
+                    <h3 class="card-title"><span class="font-weight-bold">Job Title: </span></h3>
+                    <h3 class="card-title"> {{job.title}}</h3>
+                    <!-- Text -->
+                    <p class="card-text"> <span class="font-weight-bold">Create At: </span> {{job.created_at}}</p>
+                    <p class="card-text"> <span class="font-weight-bold">Company Name: </span> {{job.company}}</p>
+                    <!-- <p class="card-text"> <span class="font-weight-bold">Company URL: </span> {{job.company_url}}</p> -->
+                    <p class="card-text"> <span class="font-weight-bold">Job Location: </span> {{job.location}}</p>
+                    <p class="card-text"> <span class="font-weight-bold">Job Type: </span> {{job.type}}</p>
+
+                    <a href="{{job.url}}" class="btn btn-primary" target="_blank">Apply Now</a>
                 </div>
-                
-                {% endfor %} 
             </div>
         </div>
+
+        {% endfor %}
+    </div>
+</div>
 {% endblock content %}
-       
