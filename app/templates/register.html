@@ -2,12 +2,12 @@
 
 {% block content%} 
     
-<div class="content-section mt-4 pt-2">
+<div class="container mt-4 pt-2">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
 
             <fieldset>
-                <legend class="border-bottom mb-4"> JOIN FLASK BLOG </legend>
+                <legend class="border-bottom mb-4"> JOIN JOB SEEKER </legend>
 
                 <div class="form-group">
                     {{ form.username.label(class="form-control-label") }}
@@ -89,7 +89,7 @@
             </fieldset>
         </form>
 </div>
-<div class="border-top pt-3 mb-2">
+<div class="container border-top pt-3 mb-2">
     <small>
         Already Have An Account? <a class="ml-2" href="/login"> Sign In</a>
     </small>

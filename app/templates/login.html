@@ -1,7 +1,14 @@
- 
-{% extends "layout.html" %}
+ {% extends "layout.html" %}
+
+{% block jumbo%}
+<div class="mt-4 pt-2"></div>
+{% endblock %}
+
 {% block content %}
-    <div class="content-section mt-4 pt-2 mb-4">
+<div class=" pt-2 mt-4 pl-4 pr-4">
+
+    </div>
+    <div class="container pl-2 pr-2 mb-4">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
@@ -45,7 +52,7 @@
             </small>
         </form>
     </div>
-    <div class="border-top pt-3">
+    <div class="container pt-3">
         <small class="text-muted">
             Need An Account? <a class="ml-2" href="{{ url_for('users.register') }}">Sign Up Now</a>
         </small>
