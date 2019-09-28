@@ -27,8 +27,7 @@ def home():
 
 @main.route("/about")
 def about():
-    jobs = get_jobs()
-    return render_template('about.html', jobs=jobs)
+    return render_template('about.html')
 
 
 @main.route("/search")
