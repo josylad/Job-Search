@@ -1,15 +1,15 @@
 {% extends "layout.html" %}
 
 {% block content%} 
-<div class="container pt-2 mt-4 mb-4 pb-4">
+<div class="container pt-2 mt-4 mb-4 pb-4"  style="height: 100vh;">
     <div class="row">
     <div class="col-md-6">
         <div class="media">
           <img class="rounded-circle account-img" src="https://source.unsplash.com/125x125/?profile,photo">
           <div class="media-body">
-            <h3 class="">{{ current_user.fullname }}</h3>
-            <p class="text-secondary">{{ current_user.username }}</p>
-            <p class="text-secondary">{{ current_user.email }}</p>
+            <h3 class="ml-4">{{ current_user.fullname }}</h3>
+            <p class="text-secondary ml-4">{{ current_user.username }}</p>
+            <p class="text-secondary ml-4">{{ current_user.email }}</p>
           </div>
         </div>
           <form method="POST" action="" enctype="multipart/form-data">

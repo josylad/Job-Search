@@ -5,10 +5,8 @@
 {% endblock %}
 
 {% block content %}
-<div class=" pt-2 mt-4 pl-4 pr-4">
-
-    </div>
-    <div class="container pl-2 pr-2 mb-4">
+<div class=" pt-2 mt-4 pl-4 pr-4"></div>
+    <div class="container pl-2 pr-2 mb-4 "  style="height: 100vh;">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
@@ -51,10 +49,11 @@
                 <a href="#">Forgot Password?</a>
             </small>
         </form>
+        <div class="container pt-3">
+            <small class="text-muted">
+                Need An Account? <a class="ml-2" href="{{ url_for('users.register') }}">Sign Up Now</a>
+            </small>
+        </div>
     </div>
-    <div class="container pt-3">
-        <small class="text-muted">
-            Need An Account? <a class="ml-2" href="{{ url_for('users.register') }}">Sign Up Now</a>
-        </small>
-    </div>
+    
 {% endblock content %}
