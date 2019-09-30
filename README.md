@@ -1,4 +1,4 @@
-# JOB SEEKER
+# JOB FETCH
 
 ### **This project was done using Python 3.6  and Flask.** 
 
@@ -24,7 +24,7 @@ This App is powered by GitHub Jobs API.
 # **SETUP/INSTALLATION.**
 ## Prerequisites
 
-To work with JOB SEEKER App you need to have some few prerequisites.
+To work with JOB FETCH App you need to have some few prerequisites.
 
 - Python3.6
 
@@ -39,17 +39,17 @@ To work with JOB SEEKER App you need to have some few prerequisites.
 - Terminal
 
 
-### **To work With JOB SEEKER**
+### **To work With JOB FETCH**
 
 1. You will need Internet connection.
 
 2. You will also need python installed and knowledge of python
 
-3. To get to use **JOB SEEKER** first you need to get to the JOB SEEKER repository. 
+3. To get to use **JOB FETCH** first you need to get to the JOB FETCH repository. 
 
 Link:-> ```http://github.com/josylad/Job-Search```
 
-4. From there you can access JOB SEEKER App.
+4. From there you can access JOB FETCH App.
 
 5. **Clone** the project.
 

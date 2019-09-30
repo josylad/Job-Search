@@ -29,7 +29,7 @@ def register():
         db.session.commit()
                 
         flash('Your account has been created! You are now able to log in', 'success')
-        mail_message("Welcome to JOB SEEKER","email/welcome_user",user.email,user=user)
+        mail_message("Welcome to JOB FETCH","email/welcome_user",user.email,user=user)
 
         return redirect(url_for('users.login'))
     return render_template('register.html', title='Register', form=form)
