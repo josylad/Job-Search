@@ -5,7 +5,8 @@
 
 # DESCRIPTION
 
-This is a Job Search application where users can for Jobs and find the links to apply for the jobs. 
+This is a Job Search application where users can search for Jobs and find the links to apply for the jobs. 
+This App is powered by GitHub Jobs API. 
 
 ## User Story
 
